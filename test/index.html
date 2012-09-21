@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Jasmine Spec Runner</title>
+
+  <link rel="shortcut icon" type="image/png" href="jasmine-1.1.0/jasmine_favicon.png">
+
+  <link rel="stylesheet" type="text/css" href="jasmine-1.1.0/jasmine.css">
+  <link rel="stylesheet" type="text/css" href="/embedweb/assets/css/source/reset.css">
+  <link rel="stylesheet" type="text/css" href="/embedweb/assets/css/source/style.css">
+  <link rel="stylesheet" type="text/css" href="/embedweb/assets/css/source/modal.css">
+  
+  <!-- include libraries files here... -->
+  <script type="text/javascript" src="/embedweb/assets/scripts/library/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="/embedweb/assets/scripts/library/knockout.js"></script>
+  <script type="text/javascript" src="/embedweb/assets/scripts/library/knockout.validation.min.js"></script>
+  <script type="text/javascript" src="jasmine-1.1.0/jasmine.js"></script>
+  <script type="text/javascript" src="jasmine-1.1.0/jasmine-html.js"></script>
+  <script type="text/javascript" src="jasmine-1.1.0/jasmine-jquery-1.3.1.js"></script>
+
+  <!-- include source files here... -->
+  <script type="text/javascript" src="../assets/scripts/source/delta.js"></script>
+  <script type="text/javascript" src="../assets/scripts/source/ui.js"></script>
+  <script type="text/javascript" src="../assets/scripts/source/messages.js"></script>
+  <script type="text/javascript" src="../assets/scripts/source/modal.js"></script>
+  <script type="text/javascript" src="../assets/scripts/source/page-error.js"></script>
+  <script type="text/javascript" src="../assets/scripts/source/data-model/address.js"></script>
+  <script type="text/javascript" src="../assets/scripts/source/data-model/loyalty-program.js"></script>
+
+  <!-- include spec files here... -->
+  <script type="text/javascript" src="specs/spec-delta.js"></script>
+  <script type="text/javascript" src="specs/spec-modal.js"></script>
+  <script type="text/javascript" src="specs/spec-page-error.js"></script>
+  <script type="text/javascript" src="specs/spec-ui.js"></script>
+  <script type="text/javascript" src="specs/spec-data-model.js"></script>
+
+  <script type="text/javascript">
+    (function() {
+      var jasmineEnv = jasmine.getEnv();
+      jasmineEnv.updateInterval = 1000;
+
+      var trivialReporter = new jasmine.TrivialReporter();
+
+      jasmineEnv.addReporter(trivialReporter);
+
+      jasmineEnv.specFilter = function(spec) {
+        return trivialReporter.specFilter(spec);
+      };
+
+      var currentWindowOnload = window.onload;
+
+      window.onload = function() {
+        if (currentWindowOnload) {
+          currentWindowOnload();
+        }
+        execJasmine();
+      };
+
+      function execJasmine() {
+        jasmineEnv.execute();
+      }
+
+    })();
+  </script>
+
+</head>
+
+<body>
+</body>
+</html>

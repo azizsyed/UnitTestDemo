@@ -1,0 +1,62 @@
+<!--#set var="page_title" value="Delta Partners" --> 
+<!--#set var="custom-body-class" value="partners-page" -->
+
+
+<!--#include virtual="/embedweb/includes/page-start.html"-->
+
+<!-- show for ios and android only -->
+
+<div class="delta-partners-container">
+
+	<section class="promo-box ios-display android-display">
+		<h2>First Bag Free</h2>
+		<img src="/embedweb/assets/image/partners-skymiles@2x.png" />
+		<p>On every Delta flight and up to 30,000 miles with the Gold Delta SkyMiles Credit Card.</p>
+		<a href="https://www262.americanexpress.com/cardapplication/unauth/cardDetail.do?id=3" class="arrow-link">apply now <span class="angle-quote">&rsaquo;</span></a>
+	</section>
+	
+	<section class="promo-box">
+		<img src="/embedweb/assets/image/partners-wing-wp7.png" class="wp7-display" />
+		<div class="wp7-float">	
+			<h2>Ideas in Flight</h2>
+			<img src="/embedweb/assets/image/partners-wing@2x.png" class="non-wp7-display" />
+			<p>Improving the travel experience through collaboration. Powered by TED, Delta, and You.</p>
+			<a href="http://delta.thismoment.com/us/base/mobileshowcase" class="arrow-link">join the discussion<span class="wp7-display">!</span> <span class="angle-quote">&rsaquo;</span></a>
+		</div>
+	
+	</section>
+	
+	<section class="promo-box">
+		<img  src="/embedweb/assets/image/partners-airfrance-wp7.png" class="wp7-display" />
+		<div class="wp7-float">	
+			<h2>Air France</h2>
+			<img src="/embedweb/assets/image/partners-airfrance@2x.png" class="non-wp7-display" />
+			<p>Find flights, check-in, and more on the Air France moblie site.</p>
+			<a href="http://mobile.airfrance.com" class="arrow-link">visit airfrance.com <span class="angle-quote">&rsaquo;</span></a>
+		</div>
+	</section>
+	
+		<img  src="/embedweb/assets/image/partners-klm-wp7.png" class="wp7-display" />
+	<section class="promo-box">
+		<div class="wp7-float">	
+			<h2>KLM</h2>
+			<img src="/embedweb/assets/image/partners-klm@2x.png" class="non-wp7-display" />
+			<p>Find flights, check-in, and more on the KLM moblie site.</p>
+			<a href="http://mobile.klm.com" class="arrow-link">visit klm.com <span class="angle-quote">&rsaquo;</span></a>
+		</div>
+	</section>
+	
+	<section class="promo-box">
+		<img src="/embedweb/assets/image/partners-alitalia-wp7.png" class="wp7-display" />
+		<div class="wp7-float">	
+			<h2>Alitalia</h2>
+			<img src="/embedweb/assets/image/partners-alitalia@2x.png" class="non-wp7-display" />
+			<p>Find flights, check-in, and more on the Alitalia moblie site.</p>
+			<a href="http://m.alitalia.com" class="arrow-link">visit alitalia.com <span class="angle-quote">&rsaquo;</span></a>
+		</div>
+	</section>
+
+</div>
+
+
+<!--#include virtual="/embedweb/includes/page-end.html"-->

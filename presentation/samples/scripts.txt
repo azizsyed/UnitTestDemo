@@ -1,0 +1,27 @@
+<script src="/embedweb/assets/scripts/library/LAB.min.js"></script>
+
+<script>
+    $LAB
+	.script("/embedweb/assets/scripts/library/jquery-1.7.1.min.js")
+	.script("/embedweb/assets/scripts/library/knockout.js")
+	.script("/embedweb/assets/scripts/library/mdetect.min.js")
+	.script("/embedweb/assets/scripts/library/json2.min.js")
+	.wait()
+	.script("/embedweb/assets/scripts/library/knockout.validation.min.js")
+	.script("/embedweb/assets/scripts/source/delta.js")
+	.wait()	
+    .script("/embedweb/assets/scripts/source/messages.js")
+	.script("/embedweb/assets/scripts/source/spinner.js")
+	.script("/embedweb/assets/scripts/source/modal.js")
+	.script("/embedweb/assets/scripts/source/ui.js")
+	.script("/embedweb/assets/scripts/source/page-error.js")
+	<!--#if expr="${custom_js}" -->
+	.wait()
+	<!--#include virtual="/embedweb/includes/page-scripts/${custom_js}" -->
+	<!--#endif-->
+	.wait();
+</script>
+<!-- end scripts-->
+
+<!-- Debugger - remove for production -->
+<!-- <script src="https://getfirebug.com/firebug-lite.js"></script> -->

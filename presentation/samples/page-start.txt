@@ -1,0 +1,54 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title><!--#echo var="page_title"--></title>
+  <meta name="description" content="">
+
+  <!-- Mobile viewport optimization h5bp.com/ad -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+
+  <!-- Home screen icon  Mathias Bynens mathiasbynens.be/notes/touch-icons -->
+  <!-- For iPhone 4 with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/h/apple-touch-icon.png">
+  <!-- For first-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/m/apple-touch-icon.png">
+  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="img/l/apple-touch-icon-precomposed.png">
+  <!-- For nokia devices: -->
+  <link rel="shortcut icon" href="img/l/apple-touch-icon.png">
+
+  <!-- The script prevents links from opening in mobile safari. https://gist.github.com/1042026 -->
+  <!-- <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script> -->
+  
+  <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
+  <meta http-equiv="cleartype" content="on">
+
+  <!--#include virtual="/embedweb/includes/styles.html"-->
+</head>
+
+<!doctype html>
+<!-- Conditional comment for mobile ie7 blogs.msdn.com/b/iemobile/ -->
+<!--[if IE]> 
+<body class="wp7 <!--#echo var='custom-body-class'-->">
+<![endif]-->
+<!--[if !IE]>--><body class="<!--#echo var='custom-body-class'-->"><!--<![endif]-->
+
+  <div id="container">
+  
+	<span class="chevron"><img src="/embedweb/assets/image/chevron@2x.png" /></span>
+    <div class="page-header">
+    	<span class="breadcrumb"><a href="#" id="breadcrumb-link"><span class="angle-quote">&lsaquo;</span> <span id="breadcrumb-text">Breadcrumb</span></a></span>
+   		<h1>
+   		    
+   		    <span class="page-title"><!--#echo var="page_title"--></span>
+   		    <!--#if expr="$page_title_info = 'true'" --><span class='info-icon' data-bind="click: showInfo"></span><!--#endif-->
+   		</h1>
+   	</div>
+    
+    <div id="main" role="main">
