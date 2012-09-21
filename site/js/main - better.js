@@ -48,6 +48,7 @@ var UserRegistration = {
 				> There is still the dependency on jQuery, particularly the dom ready event
 				> The page will call the 'initialize' method and then fail
 			> Need to isolate/decouple the code more
+			> The validation functions are dependent on this._elements being prepopulated
 		*/
 		
 		this.getDataValuesFromForm();
@@ -66,6 +67,9 @@ var UserRegistration = {
 	},
 	validateFirstName : function(){
 		var isValid = false;
+		
+		//do something with this._elements.firstName
+		
 		return isValid;
 	},
 	validateLastName : function(){

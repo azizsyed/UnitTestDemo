@@ -118,40 +118,62 @@ class DataPoint
 	$data->offset(1000,-1,-1,-1,-1,-1,-1);
 ?>                
         <div class="step slide" <?=$data->output()?>>
-            <h1>Slide 1</h1>
-            <p>Lorem Ipsum</p>
+            <h1>What are unit tests?</h1>
+            <p>Simply put, unit tests verify that your code works</p>
+			<p>Benefits:</p>
             <ul>
-            	<li>Lorem Ipsum</li>
-            	<li>Lorem Ipsum</li>
-            	<li>Lorem Ipsum</li>
-            	<li>Lorem Ipsum</li>
+				<li>Enforces decoupled code</li>
+            	<li>Help in early detection of flaws/issues</li>
+            	<li>Aid in regression testing, to insure that additions/updates do not break existing functionality</li>
+				<li>Done properly, it can save time</li>
             </ul>
         </div>
 <?
 	$data->offset(1000,-1,-1,-1,-1,-1,-1);
 ?>                
         <div class="step slide" <?=$data->output()?>>
-            <h1>Slide 1</h1>
-            <p>Lorem Ipsum</p>
+            <h1>Unit Tests</h1>
+            <p>A good unit test is:</p>
             <ul>
-            	<li>Lorem Ipsum</li>
-            	<li>Lorem Ipsum</li>
-            	<li>Lorem Ipsum</li>
-            	<li>Lorem Ipsum</li>
+            	<li>Atomic (no dependencies, can be run in any order)</li>
+            	<li>Repeatable</li>
+            	<li>Focused (target a specific functional item)</li>
+				<li>Understandable (readable to make it maintainable)
             </ul>
         </div>
 <?
 	$data->offset(1000,-1,-1,-1,-1,-1,-1);
 ?>                
         <div class="step slide" <?=$data->output()?>>
-            <h1>Slide 1</h1>
-            <p>Lorem Ipsum</p>
+            <h1>Unit Test Components</h1>
             <ul>
-            	<li>Lorem Ipsum</li>
-            	<li>Lorem Ipsum</li>
-            	<li>Lorem Ipsum</li>
-            	<li>Lorem Ipsum</li>
+            	<li>Test Case / Fixture / Suite</li>
+            	<li>Setup</li>
+            	<li>Test</li>
+            	<li>Tear down</li>
             </ul>
+        </div>
+<?
+	$data->offset(1000,-1,-1,-1,-1,-1,-1);
+?>                
+        <div class="step slide" <?=$data->output()?>>
+            <h1>TDD vs BDD</h1>
+            <p><strong>TDD</strong> - Technical (qUnit)</p>
+            <pre>
+module("Delta UI");
+
+test("checkbox unchecked", function() {
+  equal($(checkbox).prop("checked"), false);
+});
+            </pre>
+            <p><strong>BDD</strong> - Functional (JasmineJS)</p>
+            <pre>
+describe("Delta UI", function() {
+    it('should not be checked by default',function(){
+        expect($(checkbox).prop("checked")).toBe(false);
+    });
+});
+            </pre>
         </div>
         
 
@@ -174,29 +196,6 @@ class DataPoint
                 <li>Tests can be split into separate files</li>
                 <li>Logical groupings for tests</li>
             </ul>
-        </div>
-<?
-	$data->offset(-1,1000,-1,-1,-1,-1,-1);
-?>                
-        <div class="step slide" <?=$data->output()?>>
-            <h1>Unit Tests</h1>
-            <h2>TDD vs BDD</h2>
-            <p><strong>TDD</strong> - Technical (qUnit)</p>
-            <pre>
-module("Delta UI");
-
-test("checkbox unchecked", function() {
-  equal($(checkbox).prop("checked"), false);
-});
-            </pre>
-            <p><strong>BDD</strong> - Functional (JasmineJS)</p>
-            <pre>
-describe("Delta UI", function() {
-    it('should not be checked by default',function(){
-        expect($(checkbox).prop("checked")).toBe(false);
-    });
-});
-            </pre>
         </div>
 <?
 	$data->offset(-1,1000,-1,-1,-1,-1,-1);

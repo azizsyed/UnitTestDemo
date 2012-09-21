@@ -25,8 +25,6 @@ var UserRegistration = {
 		});
 	},
 	handleFormSubmission : function(){
-		this.getDataValuesFromForm();
-		
 		var isValid = this.validate();
 		
 		if (isValid){
@@ -43,13 +41,13 @@ var UserRegistration = {
 		var isValid = false;
 		
 		/*
-		Option 4 - The whole file itself has been moved to a separate file.
-		Best:
-			> In some methods, there is the dependency on jQuery
-			> However these methods are not called so no errors will be reported
-			> Unit tests can now be correcty written for the validation methods
-			> Code is even more isolated and decoupled
+		Option 3 - Use separate methods for validating each field
+		Even Better:
+			> Validation functions are now completely decoupled
+			> Now to remove the overall jQuery dependency
 		*/
+		
+		this.getDataValuesFromForm();
 		
 		isValid = isValid && validateFirstName(this._elements.firstName);
 		isValid = isValid && validateLastName(this._elements.lastName);
@@ -119,7 +117,11 @@ var UserRegistration = {
 			$("button",this._elements.form).removeAttr("disabled");
 		}
 		else{
-	 		$("button",this._elements.form).attr("disabled","disabled");
+			$("button",this._elements.form).attr("disabled","disabled");
 		}
 	}
 };
+
+$(document).ready(function(){
+	UserRegistration.initialize();
+});
