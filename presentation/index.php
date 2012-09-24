@@ -212,13 +212,101 @@ describe("Delta UI", function() {
 	$data->offset(-1,1000,-1,-1,-1,-1,-1);
 ?>                
         <div class="step slide" <?=$data->output()?>>
+            <h1>Matches</h1>
+            <ul>
+            	<li>toEqual (value)</li>
+            	<li>toBe (another object)</li>
+            	<li>toMatch (pattern)</li>
+            	<li>toBeDefined</li>
+            	<li>toBeUndefined</li>
+            	<li>toBeNull</li>
+            	<li>toBeTruthy</li>
+            	<li>toBeFalsy</li>
+            	<li>toContain (inside array/string)</li>
+            	<li>toBeLessThan (value)</li>
+            	<li>toBeGreatherThan</li>
+            	<li>toThrow (exception)</li>
+            	<li>.not. (negate matcher)</li>
+            	<li>Custom matchers can be implemented</li>
+            </ul>
+        </div>
+<?
+	$data->offset(-1,1000,-1,-1,-1,-1,-1);
+?>                
+        <div class="step slide" <?=$data->output()?>>
+            <h1>Matches Examples</h1>
+            <ul>
+            	<li>expect(a).toEqual(5)</li>
+            	<li>expect(user).not.toBeNull()</li>
+            	<li>expect(options).toBeDefined()</li>
+            	<li>expect(cities).toInclude("New York")</li>
+            	<li>expect(isLoggedIn).toBeTruthy()</li>
+            </ul>
+        </div>
+<?
+	$data->offset(-1,1000,-1,-1,-1,-1,-1);
+?>                
+        <div class="step slide" <?=$data->output()?>>
             <h1>Spies</h1>
             <p>Tracks functions and its arguments</p>
             <ul>
             	<li>Detect if function has been called</li>
             	<li>Detect how many times a fn has been invoked</li>
             	<li>Verify if a method has been invoked with specific arguments</li>
+            	<li>Can be used as a stub</li>
             </ul>
+        </div>
+<?
+	$data->offset(-1,1000,-1,-1,-1,-1,-1);
+?>                
+        <div class="step slide" <?=$data->output()?>>
+            <h1>Spy Matchers</h1>
+			<p>Matchers</p>
+            <ul>
+            	<li>toHaveBeenCalled</li>
+            	<li>toHaveBeenCalledWith</li>
+				<li>.not. (to negate the match)
+			</ul>
+			<p>Properties</p>
+            	<li>callCount</li>
+            	<li>arguments</li>
+            </ul>
+        </div>
+<?
+	$data->offset(-1,1000,-1,-1,-1,-1,-1);
+?>                
+        <div class="step slide" <?=$data->output()?>>
+            <h1>Spy Example</h1>
+			<textarea disabled="disabled" style="height:513px;">
+describe("A sample spy", function() {
+  var foo = null;
+
+  beforeEach(function() {
+    foo = {
+      setBar: function(value) {
+        bar = value;
+      }
+    };
+
+    spyOn(foo, 'setBar');
+
+    foo.setBar(123);
+    foo.setBar(456, 'another param');
+  });
+
+  it("tracks that the spy was called", function() {
+    expect(foo.setBar).toHaveBeenCalled();
+  });
+
+  it("tracks its number of calls", function() {
+    expect(foo.setBar.calls.length).toEqual(2);
+  });
+
+  it("tracks all the arguments of its calls", function() {
+    expect(foo.setBar).toHaveBeenCalledWith(123);
+  });
+});
+            </textarea>
         </div>
 <?
 	$data->offset(-1,1000,-1,-1,-1,-1,-1);
@@ -230,6 +318,43 @@ describe("Delta UI", function() {
             	<li>runs</li>
             	<li>waitsFor</li>
             </ul>
+        </div>
+<?
+	$data->offset(-1,1000,-1,-1,-1,-1,-1);
+?>                
+        <div class="step slide" <?=$data->output()?>>
+            <h1>Async Unit Test Example</h1>
+			<textarea disabled="disabled" style="height:513px;">
+beforeEach(function(){
+	//Add a fake user in the DB with the email: someone@gmail.com
+});
+afterEach(function() {
+	//Remove fake user from db with the email: someone@gmail.com
+});  
+it("should return a failure for a duplicate email registration check", function(){
+	runs(function(){
+		var self = this;
+		self.isUnique = null;
+		$.ajax({
+			url: "verify-email.php", //return JSON response
+			data: {
+				user : "someone@gmail.com"
+			},
+		})
+		.done(function(response) { 
+			self.isUnique = response.isUnique
+		});
+	});
+	
+	waitsFor(function(){
+		return this.isUnique != null;
+	}, "The email should be unique", 10000);
+	
+	runs(function(){
+		expect(this.isUnique).toBeFalsy();
+	});			
+});
+            </textarea>
         </div>
         
 		
