@@ -1,24 +1,36 @@
 describe("User Registration", function() {
 
-	describe("First Name", function() {
-		var validate = UserRegistration.validateFirstName;
-		
+	describe("Spies", function() {
 		beforeEach(function() {
 		});
 		
 		afterEach(function(){
 		});
 
-		it("should not pass validation on an empty string", function(){
-			expect(validate('')).toBeFalsy();
+		it("should call first name validation upon form validation", function(){
+			spyOn(UserRegistration,'validateFirstName');
+			UserRegistration.validate();
+			expect(UserRegistration.validateFirstName).toHaveBeenCalled();
 		});
 
-		it("should not pass validation on a null string", function(){
-			expect(validate(null)).toBeFalsy();
+		it("should call last name validation upon form validation", function(){
+			spyOn(UserRegistration,'validateLastName');
+			UserRegistration.validate();
+			expect(UserRegistration.validateLastName).toHaveBeenCalled();
 		});
 
-		it("should not pass validation on a single character", function(){
-			expect(validate('a')).toBeTruthy();
+		it("should call email validation upon form validation", function(){
+			spyOn(UserRegistration,'validateEmail');
+			UserRegistration.validate();
+			expect(UserRegistration.validateEmail).toHaveBeenCalled();
+		});
+	});
+
+	describe("First Name", function() {
+		beforeEach(function() {
+		});
+		
+		afterEach(function(){
 		});
 	});
 

@@ -51,11 +51,11 @@ var UserRegistration = {
 			> Code is even more isolated and decoupled
 		*/
 		
-		isValid = isValid && validateFirstName(this._elements.firstName);
-		isValid = isValid && validateLastName(this._elements.lastName);
-		isValid = isValid && validateEmail(this._elements.email, this._elements.emailConfirm);
+		var hasValidFirstName = this.validateFirstName(this._elements.firstName);
+		var hasValidLastName = this.validateLastName(this._elements.lastName);
+		var hasValidEmail = this.validateEmail(this._elements.email, this._elements.emailConfirm);
 		
-		return isValid;
+		return hasValidFirstName && hasValidLastName && hasValidEmail;
 	},
 	getDataValuesFromForm : function(){
 		this._elements.firstName = $("#first-name").val();
@@ -68,7 +68,7 @@ var UserRegistration = {
 		
 		//do something with firstName
 		
-		return isValid;
+		return false;
 	},
 	validateLastName : function(lastName){
 		var isValid = false;
@@ -76,6 +76,17 @@ var UserRegistration = {
 	},
 	validateEmail : function(email, emailConfirm){
 		var isValid = false;
+		
+		
+		
+		return isValid;
+	},
+	//Make sure that the email is in proper format
+	validateProperEmailFormat : function(email){
+		var isValid = false;
+		
+		
+		
 		return isValid;
 	},
 	submitRegistration : function(){
