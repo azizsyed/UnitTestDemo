@@ -67,14 +67,11 @@ class DataPoint
     <meta charset="utf-8" />
     <meta name="viewport" content="width=1024" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>Fly Delta: Embedded Web</title>
+    <title>Unit Testing</title>
     
     <link href='http://fonts.googleapis.com/css?family=Advent+Pro:400,100,200,300,500,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href="css/impress-demo.css" rel="stylesheet" />
     <!--<link href="/embedweb/assets/css/source/fonts.css" rel="stylesheet" />-->
-    
-    <link rel="shortcut icon" href="http://images.delta.com.edgesuite.net/delta/misc/favicon.ico" />
-    <link rel="apple-touch-icon" href="http://images.delta.com.edgesuite.net/delta/misc/favicon.ico" />
 </head>
 
 <body>
@@ -188,7 +185,7 @@ describe("Delta UI", function() {
 	$data->offset(-1,1000,-1,-1,-1,-1,-1);
 ?>                
         <div class="step slide" <?=$data->output()?>>
-            <h1>Unit Tests</h1>
+            <h1>About JasmineJS</h1>
             <ul>
                 <li>BDD-style syntax</li>
                 <li>Support for server side test execution</li>
@@ -204,7 +201,7 @@ describe("Delta UI", function() {
             <h1>Components</h1>
             <ul>
             	<li>Suites (describe)</li>
-            	<li>Matches (for asserts/expectations)</li>
+            	<li>Matchers (for asserts/expectations)</li>
             	<li>Setup/Teardown</li>
             </ul>
         </div>
@@ -212,7 +209,7 @@ describe("Delta UI", function() {
 	$data->offset(-1,1000,-1,-1,-1,-1,-1);
 ?>                
         <div class="step slide" <?=$data->output()?>>
-            <h1>Matches</h1>
+            <h1>Matchers</h1>
             <ul>
             	<li>toEqual (value)</li>
             	<li>toBe (another object)</li>
@@ -220,26 +217,27 @@ describe("Delta UI", function() {
             	<li>toBeDefined</li>
             	<li>toBeUndefined</li>
             	<li>toBeNull</li>
-            	<li>toBeTruthy</li>
-            	<li>toBeFalsy</li>
+            	<li>toBeTruthy (boolean)</li>
+            	<li>toBeFalsy (boolean)</li>
             	<li>toContain (inside array/string)</li>
             	<li>toBeLessThan (value)</li>
-            	<li>toBeGreatherThan</li>
+            	<li>toBeGreatherThan (value)</li>
             	<li>toThrow (exception)</li>
             	<li>.not. (negate matcher)</li>
-            	<li>Custom matchers can be implemented</li>
+            	<li>- custom -</li>
             </ul>
         </div>
 <?
 	$data->offset(-1,1000,-1,-1,-1,-1,-1);
 ?>                
         <div class="step slide" <?=$data->output()?>>
-            <h1>Matches Examples</h1>
+            <h1>Matchers Examples</h1>
             <ul>
-            	<li>expect(a).toEqual(5)</li>
+            	<li>expect(value).toEqual("some value")</li>
             	<li>expect(user).not.toBeNull()</li>
             	<li>expect(options).toBeDefined()</li>
             	<li>expect(cities).toInclude("New York")</li>
+            	<li>expect(cities.length).toEqual(5)</li>
             	<li>expect(isLoggedIn).toBeTruthy()</li>
             </ul>
         </div>
@@ -253,7 +251,7 @@ describe("Delta UI", function() {
             	<li>Detect if function has been called</li>
             	<li>Detect how many times a fn has been invoked</li>
             	<li>Verify if a method has been invoked with specific arguments</li>
-            	<li>Can be used as a stub</li>
+            	<li>Can be used as a stub/mock function</li>
             </ul>
         </div>
 <?
@@ -377,41 +375,13 @@ it("should return a failure for a duplicate email registration check", function(
 ?>                
         <div class="step slide" <?=$data->output()?>>
             <h1>Slide 1</h1>
-            <p>Lorem Ipsum</p>
             <ul>
-            	<li>Lorem Ipsum</li>
-            	<li>Lorem Ipsum</li>
-            	<li>Lorem Ipsum</li>
-            	<li>Lorem Ipsum</li>
+            	<li>qUnit</li>
+            	<li>Mocha</li>
+            	<li>YUI Test</li>
+            	<li>Sinon JS</li>
             </ul>
         </div>
-<?
-	$data->offset(-1000,-1,-1,-1,-1,-1,-1);
-?>                
-        <div class="step slide" <?=$data->output()?>>
-            <h1>Slide 1</h1>
-            <p>Lorem Ipsum</p>
-            <ul>
-            	<li>Lorem Ipsum</li>
-            	<li>Lorem Ipsum</li>
-            	<li>Lorem Ipsum</li>
-            	<li>Lorem Ipsum</li>
-            </ul>
-        </div>
-<?
-	$data->offset(-1000,-1,-1,-1,-1,-1,-1);
-?>                
-        <div class="step slide" <?=$data->output()?>>
-            <h1>Slide 1</h1>
-            <p>Lorem Ipsum</p>
-            <ul>
-            	<li>Lorem Ipsum</li>
-            	<li>Lorem Ipsum</li>
-            	<li>Lorem Ipsum</li>
-            	<li>Lorem Ipsum</li>
-            </ul>
-        </div>
-
 
 
 
@@ -426,42 +396,14 @@ it("should return a failure for a duplicate email registration check", function(
 	$data->offset(-1,-1000,-1,-1,-1,-1,-1);
 ?>                
         <div class="step slide" <?=$data->output()?>>
-            <h1>Slide 1</h1>
-            <p>Lorem Ipsum</p>
+            <h1>Demo</h1>
+            <p>A simple registration form requiring first name, last name, and email.</p>
             <ul>
-            	<li>Lorem Ipsum</li>
-            	<li>Lorem Ipsum</li>
-            	<li>Lorem Ipsum</li>
-            	<li>Lorem Ipsum</li>
+            	<li>Walk through several iterations on improving the code to make it unit test friendly</li>
+            	<li>Show initial take on writing unit tests</li>
+            	<li>Show the full unit test suite</li>
             </ul>
         </div>
-<?
-	$data->offset(-1,-1000,-1,-1,-1,-1,-1);
-?>                
-        <div class="step slide" <?=$data->output()?>>
-            <h1>Slide 1</h1>
-            <p>Lorem Ipsum</p>
-            <ul>
-            	<li>Lorem Ipsum</li>
-            	<li>Lorem Ipsum</li>
-            	<li>Lorem Ipsum</li>
-            	<li>Lorem Ipsum</li>
-            </ul>
-        </div>
-<?
-	$data->offset(-1,-1000,-1,-1,-1,-1,-1);
-?>                
-        <div class="step slide" <?=$data->output()?>>
-            <h1>Slide 1</h1>
-            <p>Lorem Ipsum</p>
-            <ul>
-            	<li>Lorem Ipsum</li>
-            	<li>Lorem Ipsum</li>
-            	<li>Lorem Ipsum</li>
-            	<li>Lorem Ipsum</li>
-            </ul>
-        </div>
-
 
 
 
