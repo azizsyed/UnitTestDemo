@@ -99,7 +99,7 @@ class DataPoint
             <ul>
                 <li>Unit Testing 101</li>
                 <li>Introduction to JasmineJS</li>
-                <li>Other JS Unit Testing Libraries</li>
+                <li>Couping/Decoupling</li>
                 <li>Demo Time!</li>
             </ul>
         </div>
@@ -354,6 +354,18 @@ it("should return a failure for a duplicate email registration check", function(
 });
             </textarea>
         </div>
+<?
+	$data->offset(-1,1000,-1,-1,-1,-1,-1);
+?>                
+        <div class="step slide" <?=$data->output()?>>
+            <h1>Other Libraries</h1>
+            <ul>
+            	<li>qUnit</li>
+            	<li>Mocha</li>
+            	<li>YUI Test</li>
+            	<li>Sinon JS</li>
+            </ul>
+        </div>
         
 		
 		
@@ -368,20 +380,215 @@ it("should return a failure for a duplicate email registration check", function(
 	$data->offset(-1,1000,-1,-1,-1,90,-1);
 ?>                
         <div id="project" class="step" <?=$data->output()?>>
-            <h1>Other Libraries</h1>
+            <h1>Writing Unit Testable Code</h1>
         </div>
 <?
 	$data->offset(-1000,-1,-1,-1,-1,-1,-1);
 ?>                
         <div class="step slide" <?=$data->output()?>>
-            <h1>Slide 1</h1>
-            <ul>
-            	<li>qUnit</li>
-            	<li>Mocha</li>
-            	<li>YUI Test</li>
-            	<li>Sinon JS</li>
-            </ul>
-        </div>
+            <h1>Coupled code</h1>
+			<ul>
+				<li>When 2 or more pieces of code have to know how each works in order to function</li>
+				<li>Can be one-way or two-way</li>
+				<li>Short answer: when 2 or more pieces of code have direct dependencies</li>
+			</ul>
+			<p>Decoupling is the opposite of coupling, where dependencies are reduced as much as possible</p>
+		</div>
+<?
+	$data->offset(-1000,-1,-1,-1,-1,-1,-1);
+?>                
+        <div class="step slide" <?=$data->output()?>>
+            <h1>Decoupling Example #1</h1>
+			<textarea disabled="disabled" style="height:500px;">
+(function($){ 
+	$(function(){
+		$("#my-form").submit(function(){
+			//handle form validation here
+		});
+	});
+})(jQuery);
+			</textarea>
+		</div>
+<?
+	$data->offset(-1000,-1,-1,-1,-1,-1,-1);
+?>                
+        <div class="step slide" <?=$data->output()?>>
+            <h1>Decoupling Example #1: Improved</h1>
+			<textarea disabled="disabled" style="height:500px;">
+var validateForm = function(){
+	//handle form validation here
+};
+			
+(function($){ 
+	$(function(){
+		$("#my-form").submit(validateForm);
+	});
+})(jQuery);
+			</textarea>
+		</div>
+<?
+	$data->offset(-1000,-1,-1,-1,-1,-1,-1);
+?>                
+        <div class="step slide" <?=$data->output()?>>
+            <h1>Decoupling Example #2</h1>
+			<textarea disabled="disabled" style="height:500px;">
+$("#some-selector").click(function(e){
+	var value = this.val();
+	var hasError = false;
+	if (value.length==0){
+		hasError = true;
+	}
+	if (value.indexOf("@")==-1){
+		hasError = true;
+	}
+	//continue validation logic
+});
+			</textarea>
+		</div>
+<?
+	$data->offset(-1000,-1,-1,-1,-1,-1,-1);
+?>                
+        <div class="step slide" <?=$data->output()?>>
+            <h1>Decoupling Example #2: Improved</h1>
+			<textarea disabled="disabled" style="height:500px;">
+var validate = function(value){
+	var hasError = false;
+	if (value.length==0){
+		hasError = true;
+	}
+	if (value.indexOf("@")==-1){
+		hasError = true;
+	}
+	//continue validation logic
+};
+
+$("#some-selector").click(function(e){
+	var value = this.val();
+	validate(value);
+	...
+});
+			</textarea>
+		</div>
+<?
+	$data->offset(-1000,-1,-1,-1,-1,-1,-1);
+?>                
+        <div class="step slide" <?=$data->output()?>>
+            <h1>Decoupling Example #3</h1>
+			<textarea disabled="disabled" style="height:500px;">
+function validateEmail(){
+	var value = $("#email").val();
+	
+	var hasError = false;
+	if (value.length==0){
+		hasError = true;
+	}
+	//continue with validation logic
+}
+			</textarea>
+		</div>
+<?
+	$data->offset(-1000,-1,-1,-1,-1,-1,-1);
+?>                
+        <div class="step slide" <?=$data->output()?>>
+            <h1>Decoupling Example #4: Improved</h1>
+			<textarea disabled="disabled" style="height:500px;">
+function validate(value){
+	var hasError = false;
+	if (value.length==0){
+		hasError = true;
+	}
+	//continue with validation logic
+}
+			
+function validateEmail(){
+	var value = $("#email").val();
+	
+	var hasError = validate(value);
+	...
+}
+			</textarea>
+		</div>
+<?
+	$data->offset(-1000,-1,-1,-1,-1,-1,-1);
+?>                
+        <div class="step slide" <?=$data->output()?>>
+            <h1>Decoupling Example #5</h1>
+			<textarea disabled="disabled" style="height:500px;">
+public class City
+{
+    public string Name;
+    public long Population;
+}
+
+public class Cities
+{
+    public City[] cities;
+}
+
+public class State
+{
+    private string name;
+    private Cities cities;
+
+    public State(string name, Cities cities)
+    {
+        ...
+    }
+
+    public long TotalPopulation()
+    {
+        float totalPopulation = 0;
+        for (int i = 0; i < cities.length; i++)
+        {
+            totalPopulation += cities[i].Population;
+        }
+        return totalPopulation;
+    }
+}			
+			</textarea>
+		</div>
+<?
+	$data->offset(-1000,-1,-1,-1,-1,-1,-1);
+?>                
+        <div class="step slide" <?=$data->output()?>>
+            <h1>Decoupling Example #5: Improved</h1>
+			<textarea disabled="disabled" style="height:500px;">
+public class City
+{
+    public string Name;
+    public long Population;
+}
+
+public class Cities
+{
+    public City[] cities;
+    public long GetTotalPopulation(){
+        float totalPopulation = 0;
+        for (int i = 0; i < cities.Length; i++)
+        {
+            totalPopulation += cities[i].Population;
+        }
+        return totalPopulation;
+    }
+}
+
+public class State
+{
+    private string name;
+    private Cities cities;
+
+    public State(string name, Cities cities)
+    {
+        ...
+    }
+
+    public long TotalPopulation()
+    {
+        return cities.GetTotalPopulation();
+    }
+}			
+			</textarea>
+		</div>
 
 
 
