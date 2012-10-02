@@ -41,10 +41,16 @@ var UserRegistration = {
 		var isValid = false;
 		
 		/*
+		=======================================================================================
+		=======================================================================================
+		
 		Option 3 - Use separate methods for validating each field
 		Even Better:
 			> Validation functions are now completely decoupled
 			> Now to remove the overall jQuery dependency
+
+		=======================================================================================
+		=======================================================================================
 		*/
 		
 		this.getDataValuesFromForm();
@@ -64,7 +70,10 @@ var UserRegistration = {
 	validateFirstName : function(firstName){
 		var isValid = false;
 		
-		//do something with firstName
+		if (firstName.length>0){
+			isValid = true;
+		}
+		//...continue validation...
 		
 		return isValid;
 	},

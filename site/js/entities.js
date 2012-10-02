@@ -43,12 +43,18 @@ var UserRegistration = {
 		var isValid = false;
 		
 		/*
+		=======================================================================================
+		=======================================================================================
+		
 		Option 4 - The whole file itself has been moved to a separate file.
 		Best:
 			> In some methods, there is the dependency on jQuery
 			> However these methods are not called so no errors will be reported
 			> Unit tests can now be correcty written for the validation methods
 			> Code is even more isolated and decoupled
+			
+		=======================================================================================
+		=======================================================================================
 		*/
 		
 		var hasValidFirstName = this.validateFirstName(this._elements.firstName);
@@ -66,7 +72,10 @@ var UserRegistration = {
 	validateFirstName : function(firstName){
 		var isValid = false;
 		
-		//do something with firstName
+		if (firstName.length>0){
+			isValid = true;
+		}
+		//...continue validation...
 		
 		return false;
 	},

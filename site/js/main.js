@@ -41,11 +41,17 @@ var UserRegistration = {
 		var isValid = true;
 		
 		/*
+		=======================================================================================
+		=======================================================================================
+
 		Option 1 - Validate all in the same method
 		Bad:
 			> Code is full of dependencies, i.e. jQuery along with UI dependency
 			> The single function handling all the validation makes it hard to troubleshoot, let alone unit test
 			> Unit tests work best when they are targetting specific actions, i.e. handle validation for a single field as supposed to all
+			
+		=======================================================================================
+		=======================================================================================
 		*/
 		
 		this._elements.firstName = $("#first-name").val();

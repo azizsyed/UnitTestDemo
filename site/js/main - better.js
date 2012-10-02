@@ -41,6 +41,9 @@ var UserRegistration = {
 		var isValid = false;
 		
 		/*
+		=======================================================================================
+		=======================================================================================
+
 		Option 2 - Use separate methods for validating each field
 		Better:
 			> UI dependency is removed, as we can test each method individually
@@ -49,6 +52,9 @@ var UserRegistration = {
 				> The page will call the 'initialize' method and then fail
 			> Need to isolate/decouple the code more
 			> The validation functions are dependent on this._elements being prepopulated
+
+		=======================================================================================
+		=======================================================================================
 		*/
 		
 		this.getDataValuesFromForm();
@@ -68,7 +74,10 @@ var UserRegistration = {
 	validateFirstName : function(){
 		var isValid = false;
 		
-		//do something with this._elements.firstName
+		if (this._elements.firstName.length>0){
+			isValid = true;
+		}
+		//...continue validation...
 		
 		return isValid;
 	},
